@@ -17,7 +17,47 @@ class Cms
 
 	public function InitPageNav()
 	{
-		$cPage = new PageIllustrations();
+		$aPages = array(
+			new PageIllustrations(),
+			new PageProjects(),
+			new PageBooks(),
+			new PageCv(),
+			new PageContacts()
+		);
+		
+		$sNavBarHTMLPath = "../HTML/navbar.html";
+		$sNavBar = file_get_contents($sNavBarHTMLPath);
+
+		$sNavBarContents = "";
+		foreach($aPages as $cPage)
+		{
+			$sNavBarContents .= $cPage->CreateThumbnail();
+		}
+
+		supplant($sNavBar, array($sNavBarContents));
+
+		echo $sNavBar;
 	}
 
+	public function AddEvents()
+	{
+		$sJsPath = "../js/init.js";
+		echo file_get_contents($sJsPath);
+	}
+
+	public function InitBody()
+	{
+		/*
+		$sTest = "<div id='content'>";
+
+		$sBody = 
+		'<form action="/file-upload"
+      	class="dropzone clickable"
+      	id="my-awesome-dropzone"></form>';
+
+      	$sTest .= $sBody;
+
+		echo $sTest;
+		*/
+	}
 }

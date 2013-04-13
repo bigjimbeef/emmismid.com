@@ -1,6 +1,6 @@
 <?php
 
-class PageIllustrations extends PageBase
+class PageCv extends PageBase
 {
 	public function __construct()
 	{
@@ -8,6 +8,6 @@ class PageIllustrations extends PageBase
 
 	protected function Name()
 	{
-		return "Illustrations";
+		return "CV";
 	}
 }

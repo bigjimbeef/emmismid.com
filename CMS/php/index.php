@@ -27,9 +27,20 @@
     	}
 	}
 
+	function supplant(&$sString, array $aFragments)
+	{
+		foreach( $aFragments as $iIdx => $sFragment )
+		{
+			$sTarget = "{" . $iIdx . "}";
+			$sString = str_replace($sTarget, $sFragment, $sString);
+		}
+	}
+
 	// Create everything necessary in one handy function.
 	$cCms = new Cms();
 	$cCms->InitBase();
-
 	$cCms->InitPageNav();
+	$cCms->InitBody();
+
+	$cCms->AddEvents();
 ?>

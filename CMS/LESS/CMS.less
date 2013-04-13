@@ -1,3 +1,54 @@
+@import "fonts.less";
+@import "colours.less";
+
 body {
-	background:		pink;
+	font-family:		Helvetica, arial, sans-serif;
+
+	#heading {
+		text-align:		center;
+
+		h1 {
+			font-family:	emmi;
+			font-size:		@massive;
+			margin-bottom: 	0px;
+		}
+
+		div {
+			&.subtitle {
+				font-size:	@small;
+				color:		#999;
+			}
+		}
+	}
+
+	#navbar {
+		text-align: 		center;
+
+		.pageThumb {
+			background:			@light-blue;
+			font-family: 		emmi;
+			font-size:			@big;
+
+			width:				200px;
+			text-align: 		center;
+
+			display:			inline-block;
+			margin-right:		20px;
+
+			&:hover {
+				cursor:			pointer;
+				background:		@blue;
+				color:			white;
+			}
+
+			&.selected {
+				background: 	@dark-blue;
+				color:			@dark-tan;
+				cursor: 		default;
+				font-weight: 	bold;
+			}
+		}
+	}
+	
+	
 }
