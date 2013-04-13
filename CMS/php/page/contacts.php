@@ -6,7 +6,7 @@ class PageContacts extends PageBase
 	{
 	}
 
-	protected function Name()
+	public function Name()
 	{
 		return "Contacts";
 	}

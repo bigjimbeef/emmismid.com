@@ -8,9 +8,11 @@ abstract class WidgetBase
 
 	public function AddToPage()
 	{
-		$this->Render();
+		$sContents = $this->Render();
 
-		$this->BindEvents();
+		$sContents .= $this->BindEvents();
+
+		return $sContents;
 	}
 
 	protected function Render()

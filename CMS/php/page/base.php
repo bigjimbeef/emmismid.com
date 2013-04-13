@@ -13,7 +13,7 @@ abstract class PageBase
 	{
 	}
 
-	protected function Name()
+	public function Name()
 	{
 		return "Page";
 	}
@@ -35,5 +35,10 @@ abstract class PageBase
 		));
 
 		return $sThumb;
+	}
+
+	public function Render()
+	{
+		// Do nothing.
 	}
 }

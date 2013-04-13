@@ -6,7 +6,7 @@ class PageBooks extends PageBase
 	{
 	}
 
-	protected function Name()
+	public function Name()
 	{
 		return "Books";
 	}

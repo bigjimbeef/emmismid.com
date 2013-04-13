@@ -6,7 +6,7 @@ class PageCv extends PageBase
 	{
 	}
 
-	protected function Name()
+	public function Name()
 	{
 		return "CV";
 	}

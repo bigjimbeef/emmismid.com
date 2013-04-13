@@ -6,7 +6,7 @@ class PageProjects extends PageBase
 	{
 	}
 
-	protected function Name()
+	public function Name()
 	{
 		return "Projects";
 	}

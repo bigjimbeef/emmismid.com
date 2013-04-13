@@ -23,6 +23,7 @@ body {
 
 	#navbar {
 		text-align: 		center;
+		margin-bottom:		20px;
 
 		.pageThumb {
 			background:			@light-blue;
@@ -50,5 +51,70 @@ body {
 		}
 	}
 	
+	#body {
+		text-align: 		center;
+
+		#leftcontent {
+			width:			30%;
+		}
+
+		#rightcontent {
+			width: 			70%;
+		}
+
+		#leftcontent, #rightcontent {
+			float: 			left;
+			height:			700px;
+		}
+
+		#fileUploader form {
+			width: 				600px;
+			height: 			500px;
+			margin:				0 auto;
+
+			display: 			inline-block;
+
+			.default {
+				margin: 		0 auto;
+
+				height:			300px;
+				width:			70%;
+				background:		@tan;
+				box-shadow: 	inset 0 0 10px 10px @dark-tan;
+
+				text-align: 	center;
+				line-height: 	300px;
+
+				font-size:		15px;
+				font-family: 	monospace;
+				color:			@dark-blue;
+
+				&.hovered {
+					box-shadow: 	inset 0 0 10px 10px @blue;
+				}
+			}
+
+			.preview {
+				display:		none;
+
+				.details {
+					font-family: 	monospace;
+
+					.filename {
+						font-size: 	18px;
+					}
+
+					img {
+						margin-top:		5px;
+						border: 		2px solid @blue;
+					}
+				}	
+				
+				.success-mark, .error-mark {
+					display: 	none;
+				}
+			}
+		}
+	}
 	
 }

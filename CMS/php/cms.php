@@ -2,6 +2,9 @@
 
 class Cms
 {
+	// The pages for the CMS.
+	private $paPages;
+
 	public function __construct()
 	{
 	}
@@ -17,7 +20,7 @@ class Cms
 
 	public function InitPageNav()
 	{
-		$aPages = array(
+		$this->paPages = array(
 			new PageIllustrations(),
 			new PageProjects(),
 			new PageBooks(),
@@ -29,7 +32,7 @@ class Cms
 		$sNavBar = file_get_contents($sNavBarHTMLPath);
 
 		$sNavBarContents = "";
-		foreach($aPages as $cPage)
+		foreach($this->paPages as $cPage)
 		{
 			$sNavBarContents .= $cPage->CreateThumbnail();
 		}
@@ -47,17 +50,26 @@ class Cms
 
 	public function InitBody()
 	{
-		/*
-		$sTest = "<div id='content'>";
+		$cCurrent = null;
+		foreach($this->paPages as $cPage)
+		{	
+			if ( strcmp($_GET['page'], strtolower($cPage->Name())) == 0 )
+			{
+				$cCurrent = $cPage;
+			}
+		}
 
-		$sBody = 
-		'<form action="/file-upload"
-      	class="dropzone clickable"
-      	id="my-awesome-dropzone"></form>';
+		if ( isset($cCurrent) )
+		{
+			// Render the page.
+			list($sLeft, $sRight) = $cCurrent->Render();
 
-      	$sTest .= $sBody;
+			$sBodyHTMLPath = "../HTML/body.html";
+			$sBody = file_get_contents($sBodyHTMLPath);
 
-		echo $sTest;
-		*/
+			supplant($sBody, array($sLeft, $sRight));
+
+			echo $sBody;
+		}
 	}
 }
