@@ -17,8 +17,8 @@ $sFilePath = $BASE_PATH . $sDirPath . $sImageName;
 
 if (move_uploaded_file($_FILES['file']['tmp_name'], $sFilePath)) 
 {
-	echo "Success!";
+	echo 1;
 	return;
 }
 
-echo "FAILURE";
+echo 0;

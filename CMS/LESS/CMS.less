@@ -56,6 +56,27 @@ body {
 
 		#leftcontent {
 			width:			30%;
+
+			#filelist {
+				h3 {
+					font-size:		@small;
+					font-family: 	emmi;
+
+					margin-bottom:  10px;
+				}
+
+				.file {
+					height:			30px;
+					min-width:		200px;
+
+					line-height:	30px;
+					background: 	pink;
+					text-align: 	left;
+					padding-left:   20px;
+					margin-bottom:  20px;
+					margin-left:  20px;
+				}
+			}
 		}
 
 		#rightcontent {
@@ -87,10 +108,11 @@ body {
 
 				font-size:		15px;
 				font-family: 	monospace;
-				color:			@dark-blue;
 
 				&.hovered {
+					background:		@dark-tan;
 					box-shadow: 	inset 0 0 10px 10px @blue;
+					color:			@dark-blue;
 				}
 			}
 

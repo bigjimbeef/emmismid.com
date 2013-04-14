@@ -31,6 +31,10 @@ Uploader = {
 			$("#fileUploader form .default").removeClass('hovered');
 		});
 
+		oDropZone.on("success", function(e,a) {
+			var eLi = $("<li class='file'>" + e.name + "</li>");
+			$('#filelist ul').append(eLi);
+		});
 	}
 
 };

@@ -10,20 +10,33 @@ class WidgetFilelist extends WidgetBase
 	{
 		$sFileList = file_get_contents("../HTML/widgets/filelist.html");
 
-		// Get all the files.
+		// TODO: File types
+		$sFileType = "images";
 
-		// DEBUG LOL
-		$aFiles = array("File 1", "File 2", "Mr. Potato", "Carrotman");
-		$sFiles = "";
-		foreach( $aFiles as $sFile )
-		{
-			$sLi = file_get_contents("../HTML/widgets/file.html");
-			supplant($sLi, array($sFile));
-
-			$sFiles .= $sLi;
-		}
+		// Read all the files in the directory.
+		$sDir = "/opt/emmisite/uploads/" . $sFileType;
 		
-		supplant($sFileList, array($sFiles));
+		if ($hDir = opendir($sDir)) {
+			$aFiles = array();
+
+			while (false !== ($sEntry = readdir($hDir))) {
+				if ($sEntry != "." && $sEntry != "..") 
+				{
+	        		$aFiles[] = $sEntry;
+	        	}
+	    	}
+
+	    	$sFiles = "";
+			foreach( $aFiles as $sFile )
+			{
+				$sLi = file_get_contents("../HTML/widgets/file.html");
+				supplant($sLi, array($sFile));
+
+				$sFiles .= $sLi;
+			}
+			
+			supplant($sFileList, array($sFiles));
+    	}
 
 		return $sFileList;
 	}
