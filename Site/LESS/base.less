@@ -1,3 +1,6 @@
+@import "fonts.less";
+@import "colours.less";
+
 html {
 	height:			100%;
 	
@@ -5,12 +8,56 @@ html {
 		height:				100%;
 		
 		#nav {
+			background:		red;
+
+
 			float:			left;
-			width:			300px;
+			transition:		all 1s ease;
+
+			width:			350px;
 			height:			100%;
 
+			padding-left:	50px;
 
-			background:		red;
+			#name-container {
+				background:		yellow;
+
+
+
+				height:			170px;
+				padding-top: 	30px;
+
+				#name-badge {
+					background:		white;
+
+
+					width:			200px;
+					height:			100px;
+					line-height: 	40px;
+					padding-top: 	20px;
+
+					font-family: 	emmi;
+					font-size:		@big;
+					text-align: 	center;
+
+					border:			1px solid #CCC;
+					box-shadow: 	5px 5px 5px #505050;
+
+					#job {
+						font-size: 	@medium;
+					}
+				}
+			}
+			
+
+			@media screen and (max-width: 650px) {
+				background:		magenta;
+
+
+				transition:		all 1s ease;
+				width:			20px;
+				padding-left:	0px;
+			}
 		}
 
 		#content {
