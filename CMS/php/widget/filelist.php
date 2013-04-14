@@ -8,7 +8,9 @@ class WidgetFilelist extends WidgetBase
 
 	protected function Render()
 	{
-		$sFileList = file_get_contents("../HTML/widgets/filelist.html");
+		//$sTest = file_get_contents("http://localhost/CMS/HTML/widgets/filelist.html");
+
+		$sFileList = file_get_contents("http://localhost/CMS/HTML/widgets/filelist.html");
 
 		// TODO: File types
 		$sFileType = "images";
@@ -29,7 +31,7 @@ class WidgetFilelist extends WidgetBase
 	    	$sFiles = "";
 			foreach( $aFiles as $sFile )
 			{
-				$sLi = file_get_contents("../HTML/widgets/file.html");
+				$sLi = file_get_contents("http://localhost/CMS/HTML/widgets/file.html");
 				supplant($sLi, array($sFile));
 
 				$sFiles .= $sLi;

@@ -1,14 +1,14 @@
 Uploader = {
 	Init: function() {
 		var that = this;
-		var interval = setInterval(function() { 
+		var tInterval = setInterval(function() {
 			var oDropZone = Dropzone.forElement("#fileUploader form");
 
 			if ( !_.isNull(oDropZone) ) {
 				// Bind the events.
 				that.BindEvents(oDropZone);
 
-				clearInterval(interval);
+				clearInterval(tInterval);
 			}
 		}, 100);
 	},
@@ -32,8 +32,16 @@ Uploader = {
 		});
 
 		oDropZone.on("success", function(e,a) {
-			var eLi = $("<li class='file'>" + e.name + "</li>");
-			$('#filelist ul').append(eLi);
+			$.ajax({
+				url: "dispatch/base.php",
+				type: "POST",
+				data: {
+					route: "files"
+				},
+				success: function(res) {
+					console.log("response", res);
+				}
+			});
 		});
 	}
 
