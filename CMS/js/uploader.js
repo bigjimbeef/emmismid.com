@@ -38,8 +38,10 @@ Uploader = {
 				data: {
 					route: "files"
 				},
-				success: function(res) {
-					console.log("response", res);
+				dataType: 'html',
+				success: function(sResponse) {
+					var sID = $(sResponse).attr('id');
+					$('#' + sID).replaceWith($(sResponse));
 				}
 			});
 		});
