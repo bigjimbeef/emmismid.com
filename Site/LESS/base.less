@@ -1,5 +1,8 @@
 @import "fonts.less";
 @import "colours.less";
+@import "transitions.less";
+
+@footerHeight:		200px;
 
 html {
 	height:			100%;
@@ -7,67 +10,123 @@ html {
 	body {
 		height:				100%;
 		
-		#nav {
-			background:		red;
+		#wrapper {
+			min-height: 		100%;
+			height: 			auto !important;
+			height: 			100%;
+			margin: 			0 auto -@footerHeight;
+
+			#hedgehog {
+				width: 300px;
+				height: 600px;
+				background:	brown;
+				position: absolute;
+				bottom: 100px;
+				left: 75px;
+			}
+
+			#nav {
+				background:		red;
 
 
-			float:			left;
-			transition:		all 1s ease;
+				float:			left;
 
-			width:			350px;
-			height:			100%;
+				width:			350px;
+				height:			100%;
 
-			padding-left:	50px;
+				padding-left:	50px;
 
-			#name-container {
-				background:		yellow;
+				// Transition properties.
+				.trans-ease;
+				.trans-second;
+				.trans-width;
+
+				#name-container {
+					background:		yellow;
+
+					height:			170px;
+					padding-top: 	30px;
+
+					#name-badge {
+						background:		white;
 
 
+						width:			200px;
+						height:			100px;
+						line-height: 	40px;
+						padding-top: 	20px;
 
-				height:			170px;
-				padding-top: 	30px;
+						font-family: 	emmi;
+						font-size:		@big;
+						text-align: 	center;
 
-				#name-badge {
-					background:		white;
+						border:			1px solid #CCC;
+						box-shadow: 	5px 5px 5px #505050;
 
-
-					width:			200px;
-					height:			100px;
-					line-height: 	40px;
-					padding-top: 	20px;
-
-					font-family: 	emmi;
-					font-size:		@big;
-					text-align: 	center;
-
-					border:			1px solid #CCC;
-					box-shadow: 	5px 5px 5px #505050;
-
-					#job {
-						font-size: 	@medium;
+						#job {
+							font-size: 	@medium;
+						}
 					}
 				}
+
+				@media screen and (max-width: 650px) {
+					background:		magenta;
+
+					width:			20px;
+					padding-left:	0px;
+				}
 			}
-			
 
-			@media screen and (max-width: 650px) {
-				background:		magenta;
+			#content {
+				height:			100%;
 
 
-				transition:		all 1s ease;
-				width:			20px;
-				padding-left:	0px;
+				background:		blue;
+
+				@media screen and (max-width: 800px) {
+					background: 		pink;
+				}
 			}
+
+			#push {
+				height:			(@footerHeight - 2);
+				clear:			both;
+
+				border-top:		2px solid black;
+
+			}
+
+
 		}
 
-		#content {
-			height:			100%;
+		#footer {
+			height:			@footerHeight;
+			clear:			both;
+			position: 		relative;
 
+			#copyright {
+				p {
+					position:		absolute;
+					bottom:			10px;
+					left:			10px;
+				}
+			}
 
-			background:		blue;
+			#flags {
+				background: 		purple;
 
-			@media screen and (max-width: 800px) {
-				background: 		pink;
+				margin-top:			2px;
+				height:				(@footerHeight - 2);
+
+				float:				right;
+
+				// TODO: Change to img
+				span {
+					background:		skyblue;
+
+					width: 			50px;
+					float: 			right;
+				}
 			}
 		}
 	}
