@@ -17,16 +17,45 @@ html {
 			margin: 			0 auto -@footerHeight;
 
 			#hedgehog {
-				width: 300px;
-				height: 600px;
-				background:	brown;
-				position: absolute;
+				width: 199px;
+				height: 396px;
+
+				position:	absolute;
 				bottom: 100px;
 				left: 75px;
+
+				#hog-body {
+					position:	absolute;
+					width: 		199px;
+					height: 	396px;
+
+					display: 	block;
+					z-index:	1;
+
+					background: url(../../Images/hedgehog_body.png);					
+				}
+				#hog-arm {
+					position:	absolute;
+					width:		127px;
+					height:		44px;
+
+					top:		120px;
+					left:		95px;
+
+					-webkit-transform: 			rotate(20deg);
+					-webkit-transform-origin: 	12px 17px;
+
+					display:	block;
+					z-index: 	0;
+
+					background: url(../../Images/hedgehog_arm.png);
+				}
+
+				//background:	brown;
 			}
 
 			#nav {
-				background:		red;
+				//background:		red;
 
 
 				float:			left;
@@ -42,13 +71,13 @@ html {
 				.trans-width;
 
 				#name-container {
-					background:		yellow;
+					//background:		yellow;
 
 					height:			170px;
 					padding-top: 	30px;
 
 					#name-badge {
-						background:		white;
+						//background:		white;
 
 
 						width:			200px;
@@ -70,7 +99,7 @@ html {
 				}
 
 				@media screen and (max-width: 650px) {
-					background:		magenta;
+					//background:		magenta;
 
 					width:			20px;
 					padding-left:	0px;
@@ -81,10 +110,10 @@ html {
 				height:			100%;
 
 
-				background:		blue;
+				//background:		blue;
 
 				@media screen and (max-width: 800px) {
-					background: 		pink;
+					//background: 		pink;
 				}
 			}
 
@@ -92,7 +121,7 @@ html {
 				height:			(@footerHeight - 2);
 				clear:			both;
 
-				border-top:		2px solid black;
+				border-top:		2px solid #808080;
 
 			}
 
@@ -105,15 +134,15 @@ html {
 			position: 		relative;
 
 			#copyright {
-				p {
-					position:		absolute;
-					bottom:			10px;
-					left:			10px;
-				}
+				position:		absolute;
+				width:			100%;
+
+				bottom:			3px;
+				text-align: 	center;
 			}
 
 			#flags {
-				background: 		purple;
+				//background: 		purple;
 
 				margin-top:			2px;
 				height:				(@footerHeight - 2);
@@ -122,7 +151,7 @@ html {
 
 				// TODO: Change to img
 				span {
-					background:		skyblue;
+					//background:		skyblue;
 
 					width: 			50px;
 					float: 			right;

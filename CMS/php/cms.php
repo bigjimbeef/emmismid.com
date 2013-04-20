@@ -27,25 +27,6 @@ class Cms
 			new PageCv(),
 			new PageContacts()
 		);
-		
-		$sNavBarHTMLPath = "../HTML/navbar.html";
-		$sNavBar = file_get_contents($sNavBarHTMLPath);
-
-		$sNavBarContents = "";
-		foreach($this->paPages as $cPage)
-		{
-			$sNavBarContents .= $cPage->CreateThumbnail();
-		}
-
-		supplant($sNavBar, array($sNavBarContents));
-
-		echo $sNavBar;
-	}
-
-	public function AddEvents()
-	{
-		$sJsPath = "../js/init.js";
-		echo file_get_contents($sJsPath);
 	}
 
 	public function InitBody()

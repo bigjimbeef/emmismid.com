@@ -18,25 +18,6 @@ abstract class PageBase
 		return "Page";
 	}
 
-	public function CreateThumbnail()
-	{
-		// Creates the little thumbnail for
-		// the page from an HTML fragment.
-		$sThumb = file_get_contents("../HTML/pagethumb.html");
-		$sPageName = static::Name();
-
-		$bSelected = strcmp($_GET["page"], strtolower($sPageName)) == 0;
-		$sClass = $bSelected ? "selected" : "";
-
-		supplant($sThumb, array(
-			$sPageName, 
-			strtolower($sPageName),
-			$sClass
-		));
-
-		return $sThumb;
-	}
-
 	public function Render()
 	{
 		// Do nothing.

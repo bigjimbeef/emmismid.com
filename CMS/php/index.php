@@ -6,6 +6,4 @@
 	$cCms->InitBase();
 	$cCms->InitPageNav();
 	$cCms->InitBody();
-
-	$cCms->AddEvents();
 ?>

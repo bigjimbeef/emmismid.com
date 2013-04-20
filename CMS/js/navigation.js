@@ -4,9 +4,15 @@ Navigation = {
 	},
 
 	BindNavEvents: function() {
-		$('#navbar').on('click', '.pageThumb', function() {
-			var sUrl = "?page=" + $(this).data('urlpart');
-			location.href = sUrl;
+		$('#navbar').on('click', 'li', function() {
+			console.log("Going: ", this);
+			var sId = $(this).attr('id');
+
+			$('#body').html('');
+			$('#body').load("../HTML/pages/" + sId + ".html", function() {
+				// DEBUG
+				Gallery.BindEvents();
+			});
 		});
 	}
 };
